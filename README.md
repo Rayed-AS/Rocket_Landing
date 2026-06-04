@@ -5,7 +5,7 @@ A Deep Q Network Model was deployed in a virtual environment built using turtle 
 velocity of the rocket so that it does not crash into the surface.
 
 The code behind the GUI and turtle implementation was AI generated however, the Deep Q Network was based on the GeeksForGeeks implementation 
-however I used my own knowledge (such as the parts of the training process behind DQN) to modify the code to fit this problem.
+but I used my own knowledge (such as the parts of the training process behind DQN) to modify the code to fit this problem and make it my own work.
 
 A variable called time was introduced that was increased with each iteration. The velocity was found by adding the initial velocity (40) and the acceleration multiplied by the time.
 This allowed a dynamic environment to be created where the DQN model has to navigate consistently changing properties while also being mindfuel of fuel.
