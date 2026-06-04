@@ -65,10 +65,7 @@ def step(action):
     elif rocket_y >= ground_y and velocity <= 10:
         return np.array([rocket_y, velocity]), 1000, True, False, {}
     else:
-        if action == 0:
-            return np.array([rocket_y, velocity]), -3, False, False, {}
-        else:
-            return np.array([rocket_y, velocity]), -1, False, False, {}
+        return np.array([rocket_y, velocity]), -1, False, False, {}
 
 class DQN(nn.Module):
     def __init__(self, state_size, action_size):
@@ -88,7 +85,7 @@ action_size = 2
 gamma = 0.99
 epsilon = 1.0
 epsilon_min = 0.01
-epsilon_decay = 0.998
+epsilon_decay = 0.995
 learning_rate = 0.0005
 batch_size = 64
 memory_size = 10000
@@ -140,7 +137,7 @@ def replay():
     loss.backward()
     optimizer.step()
 
-episodes = 3500
+episodes = 3000
 target_update_freq = 10
 start_training = time.time()
 for episode in range(episodes):
