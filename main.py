@@ -65,7 +65,10 @@ def step(action):
     elif rocket_y >= ground_y and velocity <= 10:
         return np.array([rocket_y, velocity]), 1000, True, False, {}
     else:
-        return np.array([rocket_y, velocity]), -1, False, False, {}
+        if action == 0:
+            return np.array([rocket_y, velocity]), -3, False, False, {}
+        else:
+            return np.array([rocket_y, velocity]), -1, False, False, {}
 
 class DQN(nn.Module):
     def __init__(self, state_size, action_size):
