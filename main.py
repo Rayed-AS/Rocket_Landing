@@ -85,7 +85,7 @@ action_size = 2
 gamma = 0.99
 epsilon = 1.0
 epsilon_min = 0.01
-epsilon_decay = 0.995
+epsilon_decay = 0.997
 learning_rate = 0.0005
 batch_size = 64
 memory_size = 10000
@@ -137,7 +137,7 @@ def replay():
     loss.backward()
     optimizer.step()
 
-episodes = 3000
+episodes = 3300
 target_update_freq = 10
 start_training = time.time()
 for episode in range(episodes):
